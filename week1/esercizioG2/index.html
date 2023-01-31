@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Primi passi operativi per creare un modello di pagina HTML per un post. Scopri come iniziare in modo facile.">
     <title>Sviluppo di una pagina web - Blog Epicode</title>
 </head>
+
 <body>
     <header>
 
         <div>
             <img src="/assets/EPICODE-pitto-color.png" width="150" alt="logo epicode">
-            <p>Epicode - Il blog dei developers</p>    
+            <p>Epicode - Il blog dei developers</p>
         </div>
-        
+
         <nav>
             <ul>
                 <li><a href="javascript:void(0)" title="home">Home</a></li>
                 <li><a href="javascript:void(0)" title="articoli">Articoli</a></li>
-                <li><a href="javascript:void(0)" title ="job">Job</a></li>
+                <li><a href="javascript:void(0)" title="job">Job</a></li>
             </ul>
-            
+
         </nav>
     </header>
 
@@ -31,11 +34,12 @@
                 <h1>Come creare un template per i post</h1>
                 <article>
                     <p>di Mario Rossi - pubblicato il 25-10-2020</p>
-                    <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificando le parti comuni da applicare a tutte le pagine</p>
+                    <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificando le parti comuni da
+                        applicare a tutte le pagine</p>
                     <p>Le varie aree saranno quindi suddivise in:</p>
                     <ul>
                         <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
-                        <li>Contenuti centrali variabili del tag <code>&lt;main&gt;</code>	 (corpo principale)</li>
+                        <li>Contenuti centrali variabili del tag <code>&lt;main&gt;</code> (corpo principale)</li>
                         <li>Contenuti di fine pagina comuni, da inserire nel tag <code>&lt;footer&gt;</code></li>
                     </ul>
                 </article>
@@ -45,17 +49,20 @@
                 <h1>Formattazione del codice</h1>
                 <article>
                     <p>
-                        Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da <b>selezionare con i CSS. </b>
+                        Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da <b>selezionare
+                            con i CSS. </b>
                         Perciò i passi saranno:
                     </p>
-    
-                        <ul>
-                            <li>Progettare su carta il markup finale, assegnando ad ogni specifico testo il tag appropriato</li>
-                            <li>Scrivere l'HTML dai tag esterni a quelli interni e dall'alto verso il basso</li>
-                            <li>Applicare gli stili CSS</li>
-                        </ul>
-                        
-                    <p>L'applicazione di stili CSS è cresciuta negli anni fino a raggiungere la diffusione pressoché totale.</p>
+
+                    <ul>
+                        <li>Progettare su carta il markup finale, assegnando ad ogni specifico testo il tag appropriato
+                        </li>
+                        <li>Scrivere l'HTML dai tag esterni a quelli interni e dall'alto verso il basso</li>
+                        <li>Applicare gli stili CSS</li>
+                    </ul>
+
+                    <p>L'applicazione di stili CSS è cresciuta negli anni fino a raggiungere la diffusione pressoché
+                        totale.</p>
 
                     <table>
                         <caption>Diffusione dei CSS</caption>
@@ -95,55 +102,61 @@
                         </tbody>
                     </table>
 
-                </article>    
-            </section>
-
-            <section>
-                <article>
-             
                 </article>
             </section>
 
             <section>
                 <article>
-                    <p>Un test di validazione potrà essere fatto tramite il <span><a href="https://jigsaw.w3.org/css-validator/">tool online</a></span> dedicato allo scopo. Una volta ottimizzato il tutto, avremo raggiunto il nostro obiettivo ed essere stati dei veri developers come loro:</p>
 
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dvOvHXruEDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </article>
+            </section>
+
+            <section>
+                <article>
+                    <p>Un test di validazione potrà essere fatto tramite il <span><a
+                                href="https://jigsaw.w3.org/css-validator/">tool online</a></span> dedicato allo scopo.
+                        Una volta ottimizzato il tutto, avremo raggiunto il nostro obiettivo ed essere stati dei veri
+                        developers come loro:</p>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dvOvHXruEDM"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
 
                 </article>
             </section>
 
         </main>
 
+        <article>
+            <h1>Novità</h1>
+            <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:</p>
+
+            <form action="thank-you.html" method="get">
+                <fieldset>
+                    <input type="email" name="email" id="email" placeholder="inserisci l'email">
+                    <button type="submit" id="iscriviti">Iscriviti!</button>
+                </fieldset>
+
+            </form>
+
             <article>
-                <h1>Novità</h1>
-                <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:</p>
 
-                <form action="thank-you.html" method="get">
-                    <fieldset>
-                        <input type="email" name="email" id="email" placeholder="inserisci l'email">
-                        <button type="submit" id="iscriviti">Iscriviti!</button>
-                    </fieldset>
-                    
-                </form>
 
-            <article>
 
-            
-        
-            <aside>
-                <h1>Articoli correlati</h1>
-                <a href="javascript:void(0)" target="_blank">Validare il codice HTML</a>    
-                <p>Categoria: develop</p>
-                <p>Data: 18-9-2020</p>
-                <a href="javascript:void(0)" target="_blank">Correggere la sintassi</a>
-                <p>Categoria: develop</p>
-                <p>Data: 16-9-2020</p>                    
-                <a href="javascript:void(0)" target="_blank>">Meno Kb nella pagina</a>    
-                <p>Categoria: develop</p>
-                <p>Data: 30-9-2020</p>
-            </aside>
-                
+                <aside>
+                    <h1>Articoli correlati</h1>
+                    <a href="javascript:void(0)" target="_blank">Validare il codice HTML</a>
+                    <p>Categoria: develop</p>
+                    <p>Data: 18-9-2020</p>
+                    <a href="javascript:void(0)" target="_blank">Correggere la sintassi</a>
+                    <p>Categoria: develop</p>
+                    <p>Data: 16-9-2020</p>
+                    <a href="javascript:void(0)" target="_blank>">Meno Kb nella pagina</a>
+                    <p>Categoria: develop</p>
+                    <p>Data: 30-9-2020</p>
+                </aside>
+
     </div>
 
     <hr>
@@ -151,9 +164,11 @@
     <footer>
         <p>Blog Epicode &copy; 2021</p>
         <address>
-            Testata online di Mario Rossi, registrata con prot. n.213/2018 - via Luigi Einaudi 2 - Milano. P.IVA 00112233. 
+            Testata online di Mario Rossi, registrata con prot. n.213/2018 - via Luigi Einaudi 2 - Milano. P.IVA
+            00112233.
             <span><a href="mailto:info@epicode.school">info@epicode.school</a></span>
         </address>
     </footer>
 </body>
+
 </html>
