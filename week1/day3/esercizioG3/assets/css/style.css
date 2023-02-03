@@ -50,12 +50,14 @@ header {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    box-shadow: 0px 2px 10px gray;
 
 
 }
 
 hr {
     margin: 10px 0;
+    border: 1px solid lightgray;
 }
 #container p {
     text-align: left !important;
