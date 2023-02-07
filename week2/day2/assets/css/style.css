@@ -6,6 +6,7 @@ html,body{
 
 body {
     font-family: sans-serif;
+    background-color: antiquewhite;
 }
 
 h1{
@@ -20,10 +21,10 @@ h1{
 .headlines {
     border: 1px solid;
     padding: 1rem;
+    background-color: white;
 }
 
 p{
     padding-left: 1rem;
     font-weight: 300;
 }
-

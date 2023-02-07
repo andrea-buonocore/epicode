@@ -1,9 +1,9 @@
 //Es. 1
 
 const pi = '3.14';
-var Aldo = 'Aldo';
+let Aldo = 'Aldo';
 {
-    let cliente = 'cliente';
+    var cliente = 'cliente';
     var concatena = document.getElementById('concatena');
     concatena.innerHTML = Aldo + ', ' + cliente + ', ' + pi;
     
@@ -32,7 +32,7 @@ document.getElementById('let2').innerHTML = key1;
 
 //Es 4
 
-var valoreIniziale = 15;
+const valoreIniziale = 15;
 document.getElementById('iniziale').innerHTML += valoreIniziale;
 console.log(valoreIniziale);
 
