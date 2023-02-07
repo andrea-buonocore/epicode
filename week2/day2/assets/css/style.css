@@ -6,25 +6,32 @@ html,body{
 
 body {
     font-family: sans-serif;
-    background-color: antiquewhite;
+    background-color: rgb(255, 231, 18);
 }
 
 h1{
     text-transform: uppercase;
-    text-align: center;
+    
 }
 
 #container{
     margin: 0 1rem;
+    text-align: center;
 }
+
 
 .headlines {
     border: 1px solid;
     padding: 1rem;
     background-color: white;
+    
 }
 
-p{
+.headlines:hover{
+    background-color:blue;
+    color: white;
+}
+
+p {
     padding-left: 1rem;
-    font-weight: 300;
 }
