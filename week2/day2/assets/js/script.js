@@ -30,6 +30,8 @@ document.getElementById('let2').innerHTML = key1;
     document.getElementById('final2').innerHTML = key1;
 }
 
+
+
 //Es 4
 
 const valoreIniziale = 15;
@@ -58,3 +60,4 @@ var divisione = valoreIniziale/3;
 document.getElementById('valore4').innerHTML += divisione;
 
 document.getElementById('valore5').innerHTML += valoreIniziale + ' è un numero';
+
