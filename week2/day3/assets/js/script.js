@@ -116,9 +116,29 @@ var num9 = 6;
 var primo,secondo,terzo;
 
 if(num7>num8 && num8>num9){
-  document.getElementById('es7').innerHTML = `1. ${num7}, 2. ${num8}, 3. ${num9}`;
-}else if (num8>num7 && num8>num9)
-
+  if(num8>num9){
+    document.getElementById('es7').innerHTML = `1. ${num7}, 2. ${num8}, 3. ${num9}`;
+  }
+  else{
+    document.getElementById('es7').innerHTML = `1. ${num7}, 2. ${num9}, 3. ${num8}`;
+  }
+  
+}else if (num8>num7 && num8>num9){
+  if(num7>num9){
+    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num7}, 3. ${num9}`;
+  }
+  else{
+    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num9}, 3. ${num7}`;
+  }
+}
+else if (num8>num7 && num8>num9){
+  if(num7>num9){
+    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num7}, 3. ${num9}`;
+  }
+  else{
+    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num9}, 3. ${num7}`;
+  }
+}
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
@@ -168,7 +188,8 @@ const me = {
 
 me.city = 'Toronto';
 console.log(me);
-// document.getElementById('es10').innerHTML = me;
+
+document.getElementById('es11').innerHTML = 'guarda in console';
 
 /* ESERCIZIO 12
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
@@ -176,13 +197,14 @@ console.log(me);
 
 delete me.lastName;
 console.log(me);
-
+document.getElementById('es12').innerHTML = 'guarda in console';
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
   */
 
 me.skills.pop();
 console.log(me);
+document.getElementById('es13').innerHTML = 'guarda in console';
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
