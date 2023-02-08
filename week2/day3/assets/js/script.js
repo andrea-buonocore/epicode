@@ -110,33 +110,33 @@ else{
   Alla fine mostra il risultato in console.
 */
 
-var num7 = 3;
+var num7 = 4;
 var num8 = 7;
-var num9 = 6;
+var num9 = 8;
 var primo,secondo,terzo;
 
 if(num7>num8 && num8>num9){
   if(num8>num9){
-    document.getElementById('es7').innerHTML = `1. ${num7}, 2. ${num8}, 3. ${num9}`;
+    document.getElementById('es7').innerHTML = `N1. ${num7}, N2. ${num8}, N3. ${num9}`;
   }
   else{
-    document.getElementById('es7').innerHTML = `1. ${num7}, 2. ${num9}, 3. ${num8}`;
+    document.getElementById('es7').innerHTML = `N1. ${num7}, N2. ${num9}, N3. ${num8}`;
   }
   
 }else if (num8>num7 && num8>num9){
   if(num7>num9){
-    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num7}, 3. ${num9}`;
+    document.getElementById('es7').innerHTML = `N1. ${num8}, N2. ${num7}, N3. ${num9}`;
   }
   else{
-    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num9}, 3. ${num7}`;
+    document.getElementById('es7').innerHTML = `N1. ${num8}, N2. ${num9}, N3. ${num7}`;
   }
 }
 else if (num8>num7 && num8>num9){
   if(num7>num9){
-    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num7}, 3. ${num9}`;
+    document.getElementById('es7').innerHTML = `N1. ${num8}, N2. ${num7}, N3. ${num9}`;
   }
   else{
-    document.getElementById('es7').innerHTML = `1. ${num8}, 2. ${num9}, 3. ${num7}`;
+    document.getElementById('es7').innerHTML = `N1. ${num8}, N2. ${num9}, N3. ${num7}`;
   }
 }
 
@@ -162,7 +162,7 @@ if(num10%2 == 0){
   document.getElementById('es9').innerHTML = `${num10} è pari`;
 }
 else{
-    document.getElementById('es9').innerHTML = `${num10} è pari`;
+    document.getElementById('es9').innerHTML = `${num10} è dispari`;
 }
 
 // ESERCIZIO 10
@@ -212,7 +212,7 @@ document.getElementById('es13').innerHTML = 'guarda in console';
 
 var array = [];
 array.push('1', '2', '3','4','5','6','7','8','9','10');
-document.getElementById('es14').innerHTML += array;
+document.getElementById('es14').innerHTML = array;
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
@@ -220,4 +220,4 @@ document.getElementById('es14').innerHTML += array;
 
 array.splice(9, 1,'100');
 console.log(array);
-document.getElementById('es15').innerHTML += array;
+document.getElementById('es15').innerHTML = array;
