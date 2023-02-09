@@ -181,11 +181,11 @@ console.log(eyeColor);
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
   */
-var massa = 0;
-
-for (let i = 0; i < starWarsCharacters.length; i++) {
-
+var massa = 0; 
+var i = 0;
+while (i<starWarsCharacters.length) {
   massa += Number(starWarsCharacters[i].mass);
+  i++;
 }
 
 console.log(massa);
