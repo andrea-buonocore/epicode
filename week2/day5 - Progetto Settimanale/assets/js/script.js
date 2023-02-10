@@ -23,6 +23,7 @@ function display(_num) {
         displayed.innerHTML += _num;
         operazione += _num;
         console.log('operazione: ' + operazione);
+        check=false; //imposto la variabile di controllo
     }
     
 }
