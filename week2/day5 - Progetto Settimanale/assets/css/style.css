@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body {
+    background-color: #f5f8fa;
+    font-family: 'Chivo Mono', monospace;
+    height: 100vh;
+}
+
+/* #calcolatrice{
+    border: 2px solid black;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: rgb(6, 24, 103);
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#display{
+    border: 1px solid;
+    text-align: right;
+    margin: 2rem 1rem;
+    padding: 1rem 0.5rem;
+    background-color: #fff;
+    color: black;
+}
+
+#calcolatrice button{
+    margin: 0.5rem;
+    padding: 1rem;
+} */
+
+header {
+    text-align: center;
+    color: #377be7;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#sx,#dx{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+}
+
+#sx{
+    align-items: center;
+}
+
+#dx{
+    text-align: left;
+    padding: 0 1em;
+}
+
+
+#dx h2 {
+    margin: 0;
+}
+
+#dx h3 {
+    margin-top: 0;
+}
+
+#dx ul {
+    padding: 0 1rem;
+}
+
+#dx ul li {
+    list-style-type: none;
+}
+
+#dx ul li:hover {
+    color: #377be7;
+    cursor: pointer;
+    display: inline;
+}
+
+
+#head h2,
+p {
+    margin-bottom: 0;
+}
+
+#head p {
+    margin: 0;
+}
+
+#calcolatrice {
+    display: inline-block;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+
+#display {
+    border: 1px solid;
+    text-align: right;
+    padding: 0.5em;
+    background-color: #595757;
+    color: #edebeb;
+    font-size: 1.5em;
+    margin: 1.5em 0.2em;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.fila {
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.fila button {
+    width: 22%;
+    padding: 1rem;
+    border: none;
+}
+
+button {
+    font-size: 1.5em;
+    box-shadow: 0px 0px 8px -6px rgba(0, 0, 0, 0.65);
+    color: #377be7;
+    border-radius: 5px;
+
+}
+
+button:hover {
+    background-color: #377be7;
+    color: white;
+    cursor: pointer;
+}
+
+.keywords {
+    color: #377be7;
+}
+
+#c{
+    background-color: #ad1c1c;
+    color: #fff;
+}
+
+#c:hover{
+    background-color: #df2525;
+}
+
+#uguale {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+}
+
+
+#tastiera {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: #898b8e;
+}
+
+#link {
+    text-decoration: none;
+}
+
+#link:visited,
+#link:active {
+    color: #898b8e;
+}

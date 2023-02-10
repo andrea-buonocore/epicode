@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto Settimale - Week 2</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>Progetto Settimale W2 - Calcolatrice con JS</h1>
+    </header>
+
+    <!-- MAIN -->
+
+    <main>
+        <div id="sx">
+            <div id="calcolatrice">
+                <div id="head">
+                    <h2>CALCOLATRICE FUNZIONANTE</h3>
+                        <p>di Andrea Buonocore</p>
+                </div>
+                <p id="display">&nbsp;</p>
+                <div id="tastiera">
+                    <div class="fila">
+                        <button type="button" onClick="display(this.value)" id="1" value="1">1</button>
+                        <button type="button" onClick="display(this.value)" id="2" value="2">2</button>
+                        <button type="button" onClick="display(this.value)" id="3" value="3">3</button>
+                        <button type="button" onClick="settaOperatore(this.value)" id="+" value="+">+</button><br>
+                    </div>
+                    <div class="fila">
+                        <button type="button" onClick="display(this.value)" id="4" value="4">4</button>
+                        <button type="button" onClick="display(this.value)" id="5" value="5">5</button>
+                        <button type="button" onClick="display(this.value)" id="6" value="6">6</button>
+                        <button type="button" onClick="settaOperatore(this.value)" id="-" value="-">-</button><br>
+
+                    </div>
+                    <div class="fila">
+                        <button type="button" onClick="display(this.value)" id="7" value="7">7</button>
+                        <button type="button" onClick="display(this.value)" id="8" value="8">8</button>
+                        <button type="button" onClick="display(this.value)" id="9" value="9">9</button>
+                        <button type="button" onClick="settaOperatore(this.value)" id="*" value="*">x</button><br>
+
+                    </div>
+                    <div class="fila">
+                        <button type="button" onClick="resetta()" id="c">C</button>
+                        <button type="button" onClick="display(this.value)" id="0" value="0">0</button>
+                        <button type="button" onClick="impostaDecimale(this.value)" id="decimal" value=".">.</button>
+                        <button type="button" onClick="settaOperatore(this.value)" id="/" value="/">&div;</button><br>
+
+                    </div>
+                    <button type="button" id="uguale" onclick="result()">=</button>
+                </div>
+            </div>
+        </div>
+        <div id="dx">
+            <h2>La Calcolatrice Funzionante</h2>
+            <h3>(che funziona per davvero)</h3>
+            <p>La sua struttura ed implementazione mi ha richiesto diverso tempo.</p>
+            <p>La mia volontà principale era quella di capire come poter gestire al meglio il ricevimento del click del
+                button lato Javascript. <br>
+                Diverse ricerche (Google, StackOverFlow, MDN ecc...) mi hanno portato a due possibili soluzioni:
+            </p>
+            <ol>
+                <li>Creare tanti <span class="keywords">eventListener</span> quanti sono i button, per poi passare quei
+                    valori in una variabile che concatenava di volta in volta ciò che veniva cliccato;</li><br>
+                <li>Utilizzare l'evento <span class="keywords">"onClick"</span> direttamente nel button HTML. <br> Al
+                    click dunque verrà eseguita una funzione relativa al singolo button.</li>
+            </ol>
+
+            <p>Ho preferito quest'ultima opzione perchè mi ha snellito di molto il codice JS ed ha permesso di evitare
+                ridonzanze inutili.</p>
+
+            <p>Infine per il calcolo dell'operazione ho utilizzato la funzione <span class="keywords">eval</span>.</p>
+
+            <p>Questa calcolatrice è in grado di effettuare:</p>
+            <ul>
+                <li>&plus; Addizioni</li>
+                <li>&minus; Sottrazioni</li>
+                <li>&#10005; Moltiplicazioni</li>
+                <li>&div; Divisioni</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p><a id="link" target="_blank" href="https://www.linkedin.com/in/andreabuonocore00/">&copy; Andrea Buonocore
+                2023</a> | All rights reserved</p>
+
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
