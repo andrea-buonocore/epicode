@@ -9,13 +9,22 @@ const diviso = document.getElementById('/');
 var operazione = '';
 var risultato = '';
 var operatore;
+var check;
 
 //FUNZIONI
 
 function display(_num) {
-    displayed.innerHTML += _num;
-    operazione += _num;
-    console.log('operazione: ' + operazione);
+    if(!check){ //se è vuoto, scrivi
+        displayed.innerHTML += _num;
+        operazione += _num;
+        console.log('operazione: ' + operazione);
+    }else{ //altrimenti elimina e riscrivi
+        displayed.innerHTML = '&nbsp';
+        displayed.innerHTML += _num;
+        operazione += _num;
+        console.log('operazione: ' + operazione);
+    }
+    
 }
 
 function settaOperatore(_operator) {
@@ -34,6 +43,8 @@ function result() {
     risultato = eval(operazione);
     displayed.innerHTML = risultato;
     operazione = '';
+    check=true;
+    
 }
 
 function resetta() {
