@@ -193,7 +193,7 @@ function check() {
     if (idFilm) {
         movies.map((element) => {
             if (element.imdbID == idFilm) {
-                document.getElementById('filmScelto16').innerHTML = `Hai scelto: ${element.Title}, dell'anno ${element.Year}.<br><img src="${element.Poster}" alt="Immagine Film"><br>Buona visione!<br> `;
+                document.getElementById('filmScelto16').innerHTML = `<h1>${element.Title}</h1> <h2>Anno: ${element.Year}</h2><br><img src="${element.Poster}" alt="Immagine Film"><br><h3>Buona visione!</h3><br> `;
             }
         });
     }
@@ -215,7 +215,13 @@ function check() {
 
 
 var btnCerca18 = document.getElementById('cerca18');
+var reset = document.getElementById('reset');
+var submit;
 
+
+reset.addEventListener('click',function(){
+    document.getElementById('filmScelto18').innerHTML = ''; 
+})
 
 
 btnCerca18.addEventListener('click', function () {
