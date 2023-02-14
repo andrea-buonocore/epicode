@@ -222,7 +222,6 @@ function check() {
 
 var btnCerca18 = document.getElementById('cerca18');
 var reset18 = document.getElementById('reset18');
-var submit;
 
 
 reset.addEventListener('click',function(){
@@ -231,10 +230,7 @@ reset.addEventListener('click',function(){
 
 
 btnCerca18.addEventListener('click', function () {
-    submit = true;
-    if(submit){
-        document.getElementById('filmScelto18').innerHTML = '';
-    }
+    document.getElementById('filmScelto18').innerHTML = '';
     var input = document.getElementById('inputInserito').value;
     var inputTrim = input.trim();
     checkStringa(inputTrim);
