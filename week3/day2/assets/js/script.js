@@ -182,6 +182,12 @@ const movies = [
 */
 
 var btnCerca16 = document.getElementById('cerca16');
+var reset16 = document.getElementById('reset16');
+
+reset16.addEventListener('click', function(){
+    document.getElementById('filmScelto16').innerHTML = '';
+})
+
 
 btnCerca16.addEventListener('click', function () {
     check();
@@ -215,7 +221,7 @@ function check() {
 
 
 var btnCerca18 = document.getElementById('cerca18');
-var reset = document.getElementById('reset');
+var reset18 = document.getElementById('reset18');
 var submit;
 
 
@@ -225,16 +231,23 @@ reset.addEventListener('click',function(){
 
 
 btnCerca18.addEventListener('click', function () {
+    submit = true;
+    if(submit){
+        document.getElementById('filmScelto18').innerHTML = '';
+    }
     var input = document.getElementById('inputInserito').value;
     var inputTrim = input.trim();
     checkStringa(inputTrim);
 })
 
 function checkStringa(_inputTrim) {
-
+    document.getElementById('filmScelto18').innerHTML = '<h3>Risultati:</h3>'
     for (let i = 0; i < movies.length; i++) {
+        
             if(movies[i].Title.toLowerCase().includes(_inputTrim)){
-            document.getElementById('filmScelto18').innerHTML += `Il film che hai cercato è: ${movies[i].Title}, anno: ${movies[i].Year}<br><br><img src="${movies[i].Poster}" alt="Immagine Film"><br><br>`;
+            document.getElementById('filmScelto18').innerHTML += `<h1>${movies[i].Title}</h1> <h2>Anno: ${movies[i].Year}</h2><br><img src="${movies[i].Poster}" alt="Immagine Film"><br><br>`;
+            
+            
         }
     }
 }
