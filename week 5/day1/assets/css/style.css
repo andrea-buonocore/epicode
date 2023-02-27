@@ -248,3 +248,9 @@ footer a {
         width: 32%;
     }
 }
+
+@media print {
+    header, iframe, section, aside, footer {
+        display: none;
+    }
+}
