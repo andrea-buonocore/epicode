@@ -219,6 +219,7 @@ footer a {
 
     nav{
         width: 28%;
+        text-align: right;
     }
 
     header div img,
@@ -226,6 +227,10 @@ footer a {
     nav ul li {
         margin: 0;
         vertical-align: middle;
+    }
+
+    header div{
+        text-align: left;
     }
 
     iframe, section{
