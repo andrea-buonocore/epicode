@@ -449,11 +449,14 @@ footer a {
   float: left;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+@media screen and (min-width:576px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }  
 }
+
 
 section {
   z-index: 0;
