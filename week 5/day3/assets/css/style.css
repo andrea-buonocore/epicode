@@ -77,9 +77,6 @@ body {
     background-color: #faf7e3;
     }
 
-  /* .info > * {
-    margin: 1em;
-  } */
 
   .info h3 {
     margin-bottom: 0;
@@ -94,6 +91,7 @@ body {
     width: 50%;
     text-align: center;
     padding: 1em 0;
+    margin-bottom: 1em;
     border-radius: 30px;
     text-decoration: none;
   }
@@ -108,10 +106,11 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0;
+    margin: 2em 0;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
   }
 
   .descrizione h3 {
