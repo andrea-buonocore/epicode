@@ -1,0 +1,150 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+@media screen and (min-width: 576px) {
+    
+  .container {
+    padding: 0 2em;
+    color:#612415
+  }
+
+  /* HEADER */
+  nav {
+    background-color: #faf7e3;
+  }
+
+  .navigationBar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navigationBar a {
+    text-decoration: none;
+    background-color: #f3df85;
+    border-radius: 100px;
+    padding: 10px;
+  }
+
+  .navigationBar li {
+    padding: 1.5em 0;
+  }
+
+  .navigationBar li:nth-child(3) a {
+    font-size: 1.8em;
+  }
+
+  .navigationBar a:link,
+  .navigationBar a:visited,
+  .navigationBar a:active {
+    color: #612415;
+  }
+
+  /* MAIN PRODUCTS */
+
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .productCard {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin: 1em 0;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.54);
+    overflow: hidden;
+    border-radius: 50px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #faf7e3;
+    }
+
+  /* .info > * {
+    margin: 1em;
+  } */
+
+  .info h3 {
+    margin-bottom: 0;
+  }
+
+  .info p {
+    margin-top: 0;
+  }
+
+  .btn {
+    background-color: #f3df85;
+    width: 50%;
+    text-align: center;
+    padding: 1em 0;
+    border-radius: 30px;
+    text-decoration: none;
+  }
+
+  .btn:link,
+  .btn:visited,
+  .btn:active {
+    color: #612415;
+  }
+
+  .descrizionePrezzo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .descrizione h3 {
+    margin-top: 0;
+  }
+
+  .descrizione p {
+    margin-bottom: 0;
+  }
+
+
+
+  /* ARTICLE */
+
+  .article {
+    background-color: #faf7e3;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
+    border-radius: 30px;
+  }
+
+  .articleInfo p {
+    margin: 0;
+  }
+
+  .articleInfo h3 {
+    margin-top: 0;
+  }
+
+  .articleInfo {
+    padding-bottom: 20px;
+  }
+
+
+}

@@ -1,0 +1,44 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+nav {
+    background-color: #FAF7E3;
+}
+
+.navigationBar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navigationBar a {
+    text-decoration: none;
+    background-color:#F3DF85;
+    padding: 1em 2em;
+    border-radius: 100px;
+    
+    
+} 
+
+.navigationBar li {
+    padding: 3em 0;
+    
+}
+
+.navigationBar li:nth-child(3) a{
+    font-size: 1.8em;
+}
+
+.navigationBar a:link, .navigationBar a:visited, .navigationBar a:active {
+    color: #612415;
+}
+
+
+
