@@ -39,18 +39,3 @@ html, body{
     }
 
 }
-
-.parole i:nth-child(1){
-    position: absolute;
-    animation: fade 3s linear 9s infinite;
-}
-
-.parole i:nth-child(2){
-    position: absolute;
-}
-
-.parole i:nth-child(3){
-    position: absolute;
-}
-
-
