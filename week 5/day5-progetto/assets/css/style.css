@@ -22,7 +22,7 @@ html,body {
 }
 
 h1 {
-    font-size: 85px;
+    font-size: 110px;
     font-family: 'Spectral', serif;
 }
 
@@ -101,6 +101,7 @@ nav ul li a:visited{
 
 .btnHero {
     padding: 0.8em 5em;
+    display: inline-block;
 }
 
 .btnHero:link,
@@ -114,7 +115,7 @@ nav ul li a:visited{
 }
 
 .hero h1,h2 {
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 
@@ -328,7 +329,9 @@ aside p {
 
 aside {
     width: 50%;
-    padding: 2em;
+    padding: 0 2em;
+    align-self: flex-start; 
     position: sticky;
-    top: 0;
+    top: 100px;
+    /* Flexbox stretcha gli elementi, ho bisogno di dargli un'altezza */
 }
