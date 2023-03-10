@@ -192,5 +192,13 @@ footer p:last-child {
     .profileContainer {
         width: 50%;
     }
+
+}
+
+@media screen and (min-width:768px){
     
+  
+    .footerContainer {
+        width: 50%;
+    }
 }
