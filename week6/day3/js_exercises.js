@@ -175,22 +175,26 @@ while (numericArray[i] != 32) {
 */
 const charactersArray = ['g', 'n', 'u', 'z', 'd']
 
+const newArray = [];
+
 for (let i = 0; i < charactersArray.length; i++) {
     switch (charactersArray[i]) {
         case 'g':
-            console.log(7);
+            newArray.push(7);
             break;
         case 'n':
-            console.log(14);
+            newArray.push(14);
             break;
         case 'u':
-            console.log(21);
+            newArray.push(21);
             break;
         case 'z':
-            console.log(26);
+            newArray.push(26);
             break;
         case 'd':
-            console.log(4);
+            newArray.push(4);
             break;
     }
 }
+
+console.log(newArray);  
