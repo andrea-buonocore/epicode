@@ -14,10 +14,10 @@ const addToLocalStorage = () => {
     // else {
     //     var storageArray = [];
     // }
-    
+
     var storageArray = localStorage.getItem('userName')
-    ? JSON.parse(localStorage.getItem('userName'))
-    : [];
+        ? JSON.parse(localStorage.getItem('userName'))
+        : [];
 
     storageArray.push({
         name: userName.value
@@ -31,23 +31,34 @@ const addToLocalStorage = () => {
 
 const removeFromLocalStorage = () => {
     //controllo se esiste un local storage
-    if(localStorage.getItem('userName')){
+    if (localStorage.getItem('userName')) {
         showLocalStorage.innerText = '';
         localStorage.removeItem('userName');
     }
-    else 
+    else
         alert('Nessun valore presente nel local storage!');
 }
 
 
 // ES 2
-var i = 1
+
+let i = 0;
 const counter = () => {
+    //controllo se c'è già un session storage attivo
+    if (sessionStorage.getItem('count')) {
+        i = parseInt(sessionStorage.getItem('count'));
+        i++;
+        document.getElementById('counter').innerText = i;
+        sessionStorage.setItem('count', i);
 
-    document.getElementById("counter").innerHTML = i;
-    setTimeout(() => {counter()}, 1000);
-    i++;
-  }
+    }
+    else {
+        sessionStorage.setItem('count', i);
+        document.getElementById('counter').innerText = i;
+
+    }
+    
+}
 
 
-  counter();
+setInterval(counter, 1000);
