@@ -8,13 +8,14 @@ const removeCard = (i) => {
 }
 
 const removeLi = (li) => {
-    console.log(li.parentNode);
-    li.remove();
+    document.getElementById(li).remove();
 }
 
 const addToCart = (photo) => {
+    console.log(photo.asin);
     console.log(photo.title);
     let newLi = document.createElement('li');
+    newLi.setAttribute('id', photo.asin);
     newLi.classList.add('list-group-item', 'my-1', 'rounded');
     newLi.innerText = photo.title;
     let liPrice = document.createElement('p');
@@ -26,7 +27,7 @@ const addToCart = (photo) => {
     trash.classList.add('btn', 'btn-danger', 'rounded', 'text-end', 'd-block');
     trash.innerHTML = '<i class="bi bi-trash3"></i>';
     newLi.appendChild(trash);
-    trash.onclick = () => { removeLi(this) }
+    trash.addEventListener('click', () => { removeLi(photo.asin) });
 }
 
 fetch('https://striveschool-api.herokuapp.com/books')
@@ -70,11 +71,10 @@ fetch('https://striveschool-api.herokuapp.com/books')
         cardBody.appendChild(btnRemove);
         let btnAddToCart = document.createElement('button');
         btnAddToCart.classList.add('btn', 'btn-success');
-        btnAddToCart.addEventListener('click', () => { 
-            addToCart(photo) });
         btnAddToCart.innerText = 'Add to Cart';
         cardBody.appendChild(btnAddToCart);
-
+        btnAddToCart.addEventListener('click', () => { addToCart(photo) });
+        
     })
 })
 
