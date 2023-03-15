@@ -1,0 +1,19 @@
+body {
+    background-color: #191919;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 500px;
+}
+
+#cart {
+    font-size: 1.5rem;
+    right: 8px;
+    bottom: 30px;
+    z-index: 2;
+}
+
+.card {
+    border: none;
+}
