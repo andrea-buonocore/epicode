@@ -7,7 +7,7 @@
     <title>Crudazon</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                             <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="./backoffice.html">Backoffice</a>
+                            <a class="nav-link" href="./backoffice.html">Backoffice</a>
                         </li>
                     </ul>
                 </div>
@@ -49,7 +49,10 @@
 
         <div class="container">
             <h1 class="text-center my-4">Prodotti Disponibili:</h1>
-            <div class="row row-cols-1 row-cols-xl-2 row-cols-xxl-3 justify-content-center" id="row">
+            <div class="row row-cols-1 row-cols-xl-2 row-cols-xxl-3" id="row">
+                <div class="spinner-border d-inline-block text-center" role="status" id="spinner">
+                    <span class="visually-hidden ">Loading...</span>
+                  </div>
             </div>
         </div>
 
@@ -71,30 +74,37 @@
         const CRUDAZON_URL = "https://striveschool-api.herokuapp.com/api/product/";
 
 
+        const hideSpinner = () => {
+            document.getElementById('spinner').classList.add('d-none');
+        }
+
         const displayProducts = (results) => {
             let rowReference = document.getElementById('row');
             results.forEach(product => {
                 let xCard = document.createElement('div');
                 xCard.classList.add('col');
-                xCard.innerHTML = 
-                `<div class="card my-3 shadow">
-                    <div class="row g-0">
-                        <div class="col-4">
-                            <img src="${product.imageUrl}" class="img-fluid rounded-start" alt="...">
+                xCard.innerHTML =
+                    `<div class="card my-3 shadow">
+                    <div class="row align-items-center my-5">
+                        <div class="col-sm-5">
+                            <img src="${product.imageUrl}" class="img-fluid" alt="${product.name}">
                         </div>
-                        <div class="col-8" >
+                        <div class="col-sm-7" >
                             <div class="card-body">
                                 <h5 class="card-title">${product.brand} ${product.name}</h5>
-                                <p class="card-text">${product.description}</p>
-                                <p class="card-text fs-5">
-                                    <span class="badge bg-primary">$ ${product.price}</span>
-                                    <a href="./backoffice.html?productID=${product._id}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                    <a href="./details.html?productID=${product._id}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
-                                </p>
                                 
+                                <p class="card-text text-primary">$${product.price}</p>
+                                <p class="card-text text-end">
+                                                <a href="./backoffice.html?productID=${product._id}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                                <a href="./details.html?productID=${product._id}" class="btn btn-info"><i class="bi bi-info-circle"></i></a>
+                                </p>
+
                             </div>
                         </div>
                     </div>
+
+
+
                 </div>`
                 rowReference.appendChild(xCard);
             });
@@ -113,7 +123,7 @@
                     console.log('Connessione avvenuta! Status code:', response.status);
                     let results = await response.json();
                     console.log('Hai ottenuto: ', results);
-                    //spinner
+                    hideSpinner();
                     displayProducts(results);
                 }
                 else {
