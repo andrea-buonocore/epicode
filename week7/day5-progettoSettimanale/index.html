@@ -52,7 +52,7 @@
             <div class="row row-cols-1 row-cols-xl-2 row-cols-xxl-3" id="row">
                 <div class="spinner-border d-inline-block text-center" role="status" id="spinner">
                     <span class="visually-hidden ">Loading...</span>
-                  </div>
+                </div>
             </div>
         </div>
 
@@ -82,14 +82,14 @@
             let rowReference = document.getElementById('row');
             results.forEach(product => {
                 let xCard = document.createElement('div');
-                xCard.classList.add('col');
+                xCard.classList.add('col', 'my-3');
                 xCard.innerHTML =
-                    `<div class="card my-3 shadow">
-                    <div class="row align-items-center my-5">
-                        <div class="col-sm-5">
+                    `<div class="card h-100 shadow">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5 ">
                             <img src="${product.imageUrl}" class="img-fluid" alt="${product.name}">
                         </div>
-                        <div class="col-sm-7" >
+                        <div class="col-sm-7 h-100" >
                             <div class="card-body">
                                 <h5 class="card-title">${product.brand} ${product.name}</h5>
                                 

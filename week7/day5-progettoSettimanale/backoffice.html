@@ -60,10 +60,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="description" class="form-label">Product Description</label>
-                                        <textarea class="form-control" id="description" rows="6"
-                                            aria-describedby="name input" placeholder="Add the Event description"
-                                            maxlength="20" required>
-                                        </textarea>
+                                        <textarea class="form-control" id="description" rows="6" aria-describedby="name input" placeholder="Add the Event description" required></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="brand" class="form-label">Brand</label>
@@ -71,7 +68,8 @@
                                             required>
                                             <option value="Apple">Apple</option>
                                             <option value="Samsung">Samsung</option>
-                                            <option value="Nokia">Nokia</option>
+                                            <option value="Amazon">Amazon</option>
+                                            <option value="Microsoft">Microsoft</option>
                                         </select>
                                     </div>
                                     <div class="mb-3">
@@ -122,6 +120,25 @@
 
         let productID = new URLSearchParams(window.location.search).get('productID')
 
+        const deleteProduct = async () => {
+                        
+                        let response = await fetch(CRUDAZON_URL + productID, {
+                            method: 'DELETE',
+                            headers: {
+                                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDE0MzgxZmY4MWI0MjAwMTM5YjI4MjAiLCJpYXQiOjE2NzkwNDY2ODcsImV4cCI6MTY4MDI1NjI4N30.x4-UOcOuixcR-3BqD_i1Hx-CrxYUfg-RchdEUlrqv90"
+                            }
+                        })
+
+                        console.log(response);
+                        
+                        if (response.ok) {
+                            alert('PRODOTTO ELIMINATO CORRETTAMENTE');
+                            window.location.replace('./index.html');
+                        } else {
+                            alert("PROBLEMA NELL'ELIMINAZIONE DEL PRODOTTO");
+                        }
+                    }
+
         const exists = async () => {
             try {
                 let response = await fetch(CRUDAZON_URL + productID, {
@@ -141,21 +158,11 @@
                     document.getElementById('price').value = prodotto.price
 
                     let btnDelete = document.getElementById('delete');
-                    btnDelete.addEventListener('click', async () => {
-                        window.confirm('Vuoi davvero eliminare il prodotto?');
-                        let response = await fetch(CRUDAZON_URL + productID, {
-                            method: 'DELETE',
-                            headers: {
-                                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDE0MzgxZmY4MWI0MjAwMTM5YjI4MjAiLCJpYXQiOjE2NzkwNDY2ODcsImV4cCI6MTY4MDI1NjI4N30.x4-UOcOuixcR-3BqD_i1Hx-CrxYUfg-RchdEUlrqv90"
-                            }
-                        })
-                        console.log(response);
-                        if (response.ok) {
-                            alert('PRODOTTO ELIMINATO CORRETTAMENTE');
-                            window.location.replace('./index.html');
-                        } else {
-                            alert("PROBLEMA NELL'ELIMINAZIONE DEL PRODOTTO");
+                    btnDelete.addEventListener('click', () => {
+                        if(window.confirm('Vuoi davvero eliminare il prodotto?')){
+                            deleteProduct();
                         }
+                        else alert('Prodotto NON eliminato!');
                     })
                 }
                 else {
