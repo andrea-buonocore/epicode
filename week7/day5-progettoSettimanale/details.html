@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crudazon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- INIZIO HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class=" container-fluid">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/assets/img/logo.svg" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                    Crudazon
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./backoffice.html">Backoffice</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- FINE HEADER -->
+
+    <!-- INIZIO MAIN CONTAINER -->
+
+    <div class="container-fluid">
+
+        <!-- INIZIO MAIN -->
+
+        <div class="container my-5">
+            <h2>Info Prodotto</h2>
+            <div class="row row-cols-2 justify-content-center">
+                <div class="col col-4" id="productImage">
+                </div>
+                <div class="col col-8" id="productInfo">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- FINE MAIN -->
+
+    </div>
+
+    <!-- FINE MAIN CONTAINER -->
+
+
+    <!-- INIZIO SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+    <!-- SCRIPT JS -->
+
+    <script>
+
+        let productID = new URLSearchParams(window.location.search).get('productID');
+        const CRUDAZON_URL = "https://striveschool-api.herokuapp.com/api/product/";
+
+        const productDetail = async () => {
+
+            try {
+                let response = await fetch(CRUDAZON_URL + productID, {
+                    headers: {
+                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDE0MzgxZmY4MWI0MjAwMTM5YjI4MjAiLCJpYXQiOjE2NzkwNDY2ODcsImV4cCI6MTY4MDI1NjI4N30.x4-UOcOuixcR-3BqD_i1Hx-CrxYUfg-RchdEUlrqv90"
+                    }
+                })
+                if (response.ok) {
+                    console.log('Connessione avvenuta!');
+                    let product = await response.json();
+                    console.log('prodotto:', product);
+                    console.log(product.imageUrl);
+                    let productImageReference = document.getElementById('productImage');
+                    let productImage = document.createElement('img');
+                    productImage.setAttribute('src', product.imageUrl);
+                    productImage.classList.add('w-100');
+                    productImageReference.appendChild(productImage);
+                    let productInfoReference = document.getElementById('productInfo');
+                    productInfoReference.innerHTML = `
+                    <h2>${product.brand} - ${product.name}</h2>
+                    <p>${product.description}</p>
+                    <p>Price: $${product.price}</p>
+                    <p>Image Url: <br> ${product.imageUrl}</p>
+                    <p>SERVER GENERATED: </p>
+                    <ul>
+                        <li>createdAt: ${product.createdAt}</li>
+                        <li>updatedAt: ${product.updatedAt}</li>
+                        <li>userId: ${product.userId}</li>
+                        <li>_v: ${product.__v}</li>
+                        <li>_id: ${product._id}</li>
+                    </ul>`
+                }
+                else {
+                    return new Error('Errore nella gestione della chiamata');
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+
+        }
+
+        productDetail();
+
+    </script>
+
+    <!-- FINE SCRIPT -->
+</body>
+
+</html>
