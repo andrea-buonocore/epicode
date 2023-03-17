@@ -130,7 +130,7 @@
                         })
 
                         console.log(response);
-                        
+
                         if (response.ok) {
                             alert('PRODOTTO ELIMINATO CORRETTAMENTE');
                             window.location.replace('./index.html');
@@ -193,9 +193,12 @@
                     },
                 })
                 if (response.ok) {
-                    alert('PRODOTTO SALVATO CORRETTAMENTE')
-                    window.open("/index.html");
-                } else {
+                    if(!window.confirm('Prodotto aggiunto correttamente! Desideri aggiungere altri prodotti?')){
+                        alert('Verrai rendirizzato alla homepage.');
+                        window.open("/index.html");
+
+                    }
+                }else {
                     alert("PROBLEMA NELLA CREAZIONE DEL PRODOTTO")
                 }
             } catch (error) {

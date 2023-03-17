@@ -49,11 +49,23 @@
 
         <div class="container">
             <h1 class="text-center my-4">Prodotti Disponibili:</h1>
+
+            <!-- INIZIO RESPONSIVE ROWS AND COLS -->
+
             <div class="row row-cols-1 row-cols-xl-2 row-cols-xxl-3" id="row">
+
+                <!-- INIZIO SPINNER CARICAMENTO -->
+
                 <div class="spinner-border d-inline-block text-center" role="status" id="spinner">
                     <span class="visually-hidden ">Loading...</span>
                 </div>
+
+                <!-- FINE SPINNER CARICAMENTO -->
+
             </div>
+
+            <!-- FINE RESPONSIVE ROWS AND COLS -->
+
         </div>
 
         <!-- FINE MAIN -->
@@ -71,19 +83,24 @@
     <!-- SCRIPT JS -->
 
     <script>
+
+        //Fetch URL
         const CRUDAZON_URL = "https://striveschool-api.herokuapp.com/api/product/";
 
-
+        //Spinner onclick => disappear
         const hideSpinner = () => {
             document.getElementById('spinner').classList.add('d-none');
         }
 
+        //Mostro i prodotti a schermo, mi prendo la reference della responsive row e ci appendo prodotto (xCard) dopo prodotto. 
         const displayProducts = (results) => {
             let rowReference = document.getElementById('row');
             results.forEach(product => {
+                //creo colonna
                 let xCard = document.createElement('div');
+                //div con class col + margine verticale
                 xCard.classList.add('col', 'my-3');
-                xCard.innerHTML =
+                xCard.innerHTML = //creo card (non uso la descrizione perchè mi sembrava superflua nella homepage. verrà visualizzata nelle info del prodotto.)
                     `<div class="card h-100 shadow">
                     <div class="row align-items-center">
                         <div class="col-sm-5 ">
